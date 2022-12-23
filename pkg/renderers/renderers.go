@@ -1,4 +1,4 @@
-package main
+package renderers
 
 import (
 	"html/template"
@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func renderTemplates(w http.ResponseWriter, tmpl string) {
+func RenderTemplates(w http.ResponseWriter, tmpl string) {
 	parsedFiles, err := template.ParseFiles("./templates/" + tmpl)
 	if err != nil {
 		log.Println("error occured while parsing files", err)
